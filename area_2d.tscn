@@ -2,13 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://dah1jiu0gltau" path="res://icon.svg" id="1_35kjq"]
 [ext_resource type="Script" path="res://joueur.gd" id="1_fgcnj"]
-[ext_resource type="Texture2D" uid="uid://mbnmjlr156mn" path="res://images/Savon1test.jpg" id="2_k0nfe"]
+[ext_resource type="Texture2D" uid="uid://cgb6apd0tgk3v" path="res://images/Savon1test.png" id="2_wdrtk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jxko1"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_k0nfe")
+"texture": ExtResource("2_wdrtk")
+}, {
+"duration": 1.0,
+"texture": null
 }, {
 "duration": 1.0,
 "texture": ExtResource("1_35kjq")
@@ -25,11 +28,11 @@ size = Vector2(74, 77)
 script = ExtResource("1_fgcnj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(10, 5)
-scale = Vector2(3.22015, 2.6737)
+position = Vector2(134, 19)
+scale = Vector2(2.58128, 2.5464)
 sprite_frames = SubResource("SpriteFrames_jxko1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(35, 25.5)
+position = Vector2(134, 9)
 scale = Vector2(-1.18056, -1.4717)
 shape = SubResource("RectangleShape2D_qn2oc")
