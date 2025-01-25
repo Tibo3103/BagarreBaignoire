@@ -35,20 +35,20 @@ func _on_mob_timer_timeout():
 	
 	
 
-func game_over() -> void:
-	"""
+func game_over():
+	
 	$Music.stop()
 	$GameOverSound.play()
 	$ScoreTimer.stop()
 	$mobTimer.stop();
 	$HUD.show_game_over()
-	"""
-	pass
+	
 
 	
 func new_game():
-	#$Music.play()
+	$Music.play()
 	score=0
+	$startTimer.start()
 	$mobTimer.start()
 	$Player.start($startPosition.position)
 	$HUD.update_score(score)

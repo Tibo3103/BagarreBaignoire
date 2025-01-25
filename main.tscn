@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cq1se6ncmmfg1"]
+[gd_scene load_steps=8 format=3 uid="uid://cq1se6ncmmfg1"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_bkx4a"]
 [ext_resource type="PackedScene" uid="uid://cbamkm1t8sl01" path="res://player.tscn" id="1_iw1cx"]
 [ext_resource type="PackedScene" uid="uid://bmjqmn5peipua" path="res://pouce_pouce.tscn" id="2_45s8h"]
-[ext_resource type="PackedScene" path="res://hud.tscn" id="4_7kfrq"]
+[ext_resource type="PackedScene" uid="uid://ig6g412tve4g" path="res://hud.tscn" id="4_7kfrq"]
 [ext_resource type="AudioStream" uid="uid://dm2w277nh22j7" path="res://Sounds/KeunotorSound.ogg" id="5_81fqt"]
+[ext_resource type="AudioStream" uid="uid://bynkxyo2pia1r" path="res://Sounds/Doom Eternal OST - The Only Thing They Fear Is You (Mick Gordon) [Doom Eternal Theme].mp3" id="6_ur0hu"]
 
 [sub_resource type="Curve2D" id="Curve2D_s7nfh"]
 _data = {
@@ -37,6 +38,8 @@ one_shot = true
 [node name="mobTimer" type="Timer" parent="."]
 wait_time = 3.0
 
+[node name="ScoreTimer" type="Timer" parent="."]
+
 [node name="startTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
@@ -57,8 +60,13 @@ rotation = 0.00132275
 [node name="GameOverSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_81fqt")
 
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ur0hu")
+autoplay = true
+
 [connection signal="timeout" from="Player/DashCooldown" to="Player" method="_on_dash_cooldown_timeout"]
 [connection signal="timeout" from="Player/Dash" to="Player" method="_on_dash_timeout"]
 [connection signal="timeout" from="mobTimer" to="." method="_on_mob_timer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
 [connection signal="timeout" from="startTimer" to="." method="_on_start_timer_timeout"]
 [connection signal="start_game" from="HUD" to="." method="new_game"]

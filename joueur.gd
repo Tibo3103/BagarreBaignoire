@@ -1,5 +1,5 @@
 extends Area2D
-#signal hit
+signal hit
 
 @export var speed = 400
 var screen_size 
@@ -69,13 +69,12 @@ func start(pos):
 
 
 func _on_body_shape_entered(_body_rid: RID, _body: Node2D, _body_shape_index: int, _local_shape_index: int) -> void:
-	"""
 	hide()
 	print("ça marche")
 	hit.emit()
 	$CollisionShape2D.set_deferred("disabled",true)
-	"""
-	pass
+	get_parent().game_over()
+	
 
 
 func _on_dash_cooldown_timeout():
