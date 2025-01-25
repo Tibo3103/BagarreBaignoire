@@ -97,7 +97,7 @@ script = ExtResource("1_fgcnj")
 position = Vector2(1.05115, -2.26136)
 scale = Vector2(-2.8889, 3.03444)
 sprite_frames = SubResource("SpriteFrames_jxko1")
-animation = &"haut"
+animation = &"bas"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visibility_layer = 7

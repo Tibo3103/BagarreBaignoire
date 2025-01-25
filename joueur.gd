@@ -15,7 +15,7 @@ func _process(delta):
 		if Input.is_action_pressed("dash") and is_ready:
 			is_ready = false 
 			$DashCooldown.start()
-			speed = 2000
+			speed = 1000
 			$Dash.start()
 			print("dash droite")
 		velocity.x += 1
@@ -24,7 +24,7 @@ func _process(delta):
 		if Input.is_action_pressed("dash") and is_ready:
 			is_ready = false 
 			$DashCooldown.start()
-			speed = 2000
+			speed = 1000
 			$Dash.start()
 			print("dash gauche")
 		velocity.x -= 1
@@ -33,7 +33,7 @@ func _process(delta):
 		if Input.is_action_pressed("dash") and is_ready:
 			is_ready = false 
 			$DashCooldown.start()
-			speed = 2000
+			speed = 1000
 			$Dash.start()
 			print("dash bas")
 		velocity.y += 1
@@ -42,7 +42,7 @@ func _process(delta):
 		if Input.is_action_pressed("dash") and is_ready:
 			is_ready = false 
 			$DashCooldown.start()
-			speed = 2000
+			speed = 1000
 			$Dash.start()
 			print("dash haut")
 		velocity.y -= 1
