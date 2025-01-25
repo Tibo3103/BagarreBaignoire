@@ -2,19 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
-uid="uid://c68yhn1n3c621"
-
-f85a784efc1c60636d0e5a8579b6be53e566b715
-path="res://.godot/imported/sergent_savon_bas_2.png-304e98aea07381637eb3d2be2a874979.ctex"
+uid="uid://cxq7d532d16gn"
+path="res://.godot/imported/sergent_savon_droite_3.png-bbc12f4f769614b55cfe4d1855fe304e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/sergent_savon_bas_2.png"
-dest_files=["res://.godot/imported/sergent_savon_bas_2.png-304e98aea07381637eb3d2be2a874979.ctex"]
+source_file="res://images/sergent_savon_droite_3.png"
+dest_files=["res://.godot/imported/sergent_savon_droite_3.png-bbc12f4f769614b55cfe4d1855fe304e.ctex"]
 
 [params]
 

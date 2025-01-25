@@ -1,14 +1,22 @@
 [gd_scene load_steps=6 format=3 uid="uid://bmjqmn5peipua"]
 
 [ext_resource type="Script" path="res://pouce-pouce.gd" id="1_osfyv"]
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://gd58o62hldin" path="res://images/pousspoussver1.png" id="2_cjs33"]
 [ext_resource type="PackedScene" uid="uid://ueay085cicij" path="res://bubulle.tscn" id="3_4r67e"]
+=======
+[ext_resource type="Texture2D" uid="uid://gd58o62hldin" path="res://images/pousspoussver1.png" id="2_kg2yy"]
+>>>>>>> f85a784efc1c60636d0e5a8579b6be53e566b715
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nbppq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+<<<<<<< HEAD
 "texture": ExtResource("2_cjs33")
+=======
+"texture": ExtResource("2_kg2yy")
+>>>>>>> f85a784efc1c60636d0e5a8579b6be53e566b715
 }],
 "loop": true,
 "name": &"pouce-pouce",
@@ -16,10 +24,17 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bfqg8"]
+<<<<<<< HEAD
 size = Vector2(149.25, 176)
 
 [node name="pouce-pouce" type="RigidBody2D"]
 position = Vector2(1518, 636)
+=======
+size = Vector2(29.4295, 27.0081)
+
+[node name="pouce-pouce" type="RigidBody2D"]
+scale = Vector2(-3.87366, 3.85069)
+>>>>>>> f85a784efc1c60636d0e5a8579b6be53e566b715
 collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource("1_osfyv")
@@ -27,13 +42,21 @@ metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+<<<<<<< HEAD
 position = Vector2(-373, -173.5)
 scale = Vector2(4.6, 6.3)
+=======
+scale = Vector2(1.4947, -1.47181)
+>>>>>>> f85a784efc1c60636d0e5a8579b6be53e566b715
 sprite_frames = SubResource("SpriteFrames_nbppq")
 animation = &"pouce-pouce"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+<<<<<<< HEAD
 position = Vector2(-373, -169)
+=======
+position = Vector2(-0.516307, 1.03877)
+>>>>>>> f85a784efc1c60636d0e5a8579b6be53e566b715
 shape = SubResource("RectangleShape2D_bfqg8")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

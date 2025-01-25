@@ -10,12 +10,16 @@ func _process(delta):
 	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
+		$AnimatedSprite2D.animation="droite"
 	if Input.is_action_pressed("move_left"):
 		velocity.x -= 1
+		$AnimatedSprite2D.animation="gauche"
 	if Input.is_action_pressed("move_backward"):
 		velocity.y += 1
+		$AnimatedSprite2D.animation="bas"
 	if Input.is_action_pressed("move_forward"):
 		velocity.y -= 1
+		$AnimatedSprite2D.animation="haut"
 	
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed;
