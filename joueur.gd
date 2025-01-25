@@ -6,7 +6,7 @@ var screen_size
 var is_ready : bool = true
 var touchable = true
 var dashing = false
-
+var vie = 3
 
 	
 func _process(delta):
@@ -75,7 +75,11 @@ func start(pos):
 func _on_body_shape_entered(_body_rid: RID, body: Node2D, _body_shape_index: int, _local_shape_index: int) -> void:
 	if touchable and not dashing:
 		#hide()
-		
+		print(body.name)
+		if body.name == "Bubulle":
+			body.queue_free()
+			
+			
 		print("ça marche")
 		hit.emit()
 		count=count+1
@@ -83,8 +87,13 @@ func _on_body_shape_entered(_body_rid: RID, body: Node2D, _body_shape_index: int
 		#$CollisionShape2D.set_deferred("disabled",true)
 		touchable = false
 		$CooldownCollision.start()
+		vie -= 1
+		get_parent().get_node_or_null("HUD").update_vie(vie)
 		if count==3:
+			$CollisionShape2D.set_deferred("disabled",true)
 			get_parent().game_over()
+			vie = 3
+			get_parent().get_node_or_null("HUD").update_vie(vie)
 			count=0
 			
 	elif  dashing:
