@@ -35,8 +35,6 @@ one_shot = true
 wait_time = 0.2
 one_shot = true
 
-[node name="HUD" parent="." instance=ExtResource("4_7kfrq")]
-
 [node name="mobTimer" type="Timer" parent="."]
 wait_time = 3.0
 
@@ -55,6 +53,8 @@ curve = SubResource("Curve2D_s7nfh")
 [node name="mobSpawnLocation" type="PathFollow2D" parent="mobPath"]
 rotation = 0.00132275
 
+[node name="HUD" parent="." instance=ExtResource("4_7kfrq")]
+
 [node name="GameOverSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_81fqt")
 
@@ -64,7 +64,7 @@ autoplay = true
 
 [connection signal="timeout" from="Player/DashCooldown" to="Player" method="_on_dash_cooldown_timeout"]
 [connection signal="timeout" from="Player/Dash" to="Player" method="_on_dash_timeout"]
-[connection signal="start_game" from="HUD" to="." method="new_game"]
 [connection signal="timeout" from="mobTimer" to="." method="_on_mob_timer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
 [connection signal="timeout" from="startTimer" to="." method="_on_start_timer_timeout"]
+[connection signal="start_game" from="HUD" to="." method="new_game"]

@@ -1,10 +1,10 @@
 extends Area2D
 signal hit
-
+var count=0
 @export var speed = 400
 var screen_size 
 var is_ready : bool = true
-
+var touchable = true
 
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -69,11 +69,18 @@ func start(pos):
 
 
 func _on_body_shape_entered(_body_rid: RID, _body: Node2D, _body_shape_index: int, _local_shape_index: int) -> void:
-	hide()
-	print("ça marche")
-	hit.emit()
-	$CollisionShape2D.set_deferred("disabled",true)
-	get_parent().game_over()
+	if touchable:
+		#hide()
+		print("ça marche")
+		hit.emit()
+		count=count+1
+		print(count)
+		#$CollisionShape2D.set_deferred("disabled",true)
+		touchable = false
+		$CooldownCollision.start()
+		if count==3:
+			get_parent().game_over()
+			count=0
 	
 
 
@@ -83,3 +90,7 @@ func _on_dash_cooldown_timeout():
 
 func _on_dash_timeout():
 	speed = 400
+
+
+func _on_cooldown_collision_timeout():
+	touchable=true

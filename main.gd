@@ -2,7 +2,6 @@ extends Node
 @export var mob_scene: PackedScene
 var score
 
-
 func _ready():
 	# Vérification si la scène du mob est assignée
 	if mob_scene == null:
@@ -16,6 +15,7 @@ func _on_mob_timer_timeout():
 	if mob_scene == null:
 		push_error("mob_scene is not assigned!")
 		return
+		
 	
 	# Instancier le mob
 	var mob = mob_scene.instantiate()
@@ -46,8 +46,10 @@ func game_over():
 			child.extinction()
 	
 func new_game():
+	
 	$Music.play()
 	score=0
+	# Connectez le signal hit du joueur pour gérer les collisions
 	$startTimer.start()
 	$mobTimer.start()
 	$Player.start($startPosition.position)

@@ -53,5 +53,19 @@ text = "START"
 wait_time = 2.0
 one_shot = true
 
+[node name="Vie" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -31.5
+offset_right = 31.5
+offset_bottom = 168.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_7tbd6")
+theme_override_font_sizes/font_size = 60
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
