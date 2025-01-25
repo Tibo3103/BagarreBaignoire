@@ -17,13 +17,16 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_jxko1"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_mp88c")
-}, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("3_bkdmh")
 }, {
-"duration": 1.0,
+"duration": 0.5,
+"texture": ExtResource("2_mp88c")
+}, {
+"duration": 0.5,
+"texture": ExtResource("3_bkdmh")
+}, {
+"duration": 0.5,
 "texture": ExtResource("4_pkwoi")
 }],
 "loop": true,
@@ -31,27 +34,33 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_h37fk")
-}, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("9_pkijp")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("10_nmksr")
+}, {
+"duration": 0.5,
+"texture": ExtResource("9_pkijp")
+}, {
+"duration": 0.5,
+"texture": ExtResource("8_h37fk")
 }],
 "loop": true,
 "name": &"droite",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_3tt0j")
-}, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("6_6ydee")
 }, {
-"duration": 1.0,
+"duration": 0.5,
+"texture": ExtResource("5_3tt0j")
+}, {
+"duration": 0.5,
+"texture": ExtResource("6_6ydee")
+}, {
+"duration": 0.5,
 "texture": ExtResource("7_6x3n1")
 }],
 "loop": true,
@@ -59,13 +68,16 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("11_fd2ud")
-}, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("12_tig3n")
 }, {
-"duration": 1.0,
+"duration": 0.5,
+"texture": ExtResource("11_fd2ud")
+}, {
+"duration": 0.5,
+"texture": ExtResource("12_tig3n")
+}, {
+"duration": 0.5,
 "texture": ExtResource("13_b6r3t")
 }],
 "loop": true,
@@ -84,8 +96,7 @@ script = ExtResource("1_fgcnj")
 position = Vector2(1.05115, -2.26136)
 scale = Vector2(-2.8889, 3.03444)
 sprite_frames = SubResource("SpriteFrames_jxko1")
-animation = &"gauche"
-frame_progress = 0.0322032
+animation = &"haut"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -2)
