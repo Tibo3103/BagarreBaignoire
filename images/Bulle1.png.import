@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://vijiv33ltagi"
-=======
-uid="uid://b4byn3xo7a71i"
->>>>>>> 33603d8cedfcb803d182ff854cbece59eca6f4b5
-path="res://.godot/imported/Savon1test.png-c1b2bd020ba4bc9285ff2f28edfc74cb.ctex"
+uid="uid://5s6gsgk33yye"
+path="res://.godot/imported/Bulle1.png-c73dbe3b30166cfdaa99306ca9a8298a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/Savon1test.png"
-dest_files=["res://.godot/imported/Savon1test.png-c1b2bd020ba4bc9285ff2f28edfc74cb.ctex"]
+source_file="res://images/Bulle1.png"
+dest_files=["res://.godot/imported/Bulle1.png-c73dbe3b30166cfdaa99306ca9a8298a.ctex"]
 
 [params]
 

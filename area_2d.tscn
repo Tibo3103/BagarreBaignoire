@@ -1,20 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbamkm1t8sl01"]
+[gd_scene load_steps=7 format=3 uid="uid://cbamkm1t8sl01"]
 
-[ext_resource type="Texture2D" uid="uid://dah1jiu0gltau" path="res://icon.svg" id="1_35kjq"]
 [ext_resource type="Script" path="res://joueur.gd" id="1_fgcnj"]
+
 [ext_resource type="Texture2D" uid="uid://vijiv33ltagi" path="res://images/Savon1test.png" id="2_wdrtk"]
+
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jxko1"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_wdrtk")
+"texture": ExtResource("2_jj1m1")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("3_b5hmo")
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_35kjq")
+"texture": ExtResource("4_1u2s7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_b5hmo")
 }],
 "loop": true,
 "name": &"default",
@@ -29,11 +33,11 @@ position = Vector2(450, 271)
 script = ExtResource("1_fgcnj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(134, 19)
-scale = Vector2(2.58128, 2.5464)
+position = Vector2(153.337, -1.4072)
+scale = Vector2(7.41564, 7.6482)
 sprite_frames = SubResource("SpriteFrames_jxko1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(134, 9)
+position = Vector2(154, 0)
 scale = Vector2(-1.18056, -1.4717)
 shape = SubResource("RectangleShape2D_qn2oc")
