@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cq1se6ncmmfg1"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_bkx4a"]
-[ext_resource type="PackedScene" uid="uid://cbamkm1t8sl01" path="res://area_2d.tscn" id="1_iw1cx"]
+[ext_resource type="PackedScene" uid="uid://cbamkm1t8sl01" path="res://player.tscn" id="1_iw1cx"]
 [ext_resource type="PackedScene" uid="uid://bmjqmn5peipua" path="res://pouce_pouce.tscn" id="2_45s8h"]
 
 [sub_resource type="Curve2D" id="Curve2D_s7nfh"]
@@ -14,7 +14,7 @@ point_count = 6
 script = ExtResource("1_bkx4a")
 mob_scene = ExtResource("2_45s8h")
 
-[node name="joueur" parent="." instance=ExtResource("1_iw1cx")]
+[node name="Player" parent="." instance=ExtResource("1_iw1cx")]
 
 [node name="mobTimer" type="Timer" parent="."]
 wait_time = 0.5
@@ -31,6 +31,8 @@ curve = SubResource("Curve2D_s7nfh")
 
 [node name="mobSpawnLocation" type="PathFollow2D" parent="mobPath"]
 rotation = 0.00132275
+
+[node name="pouce-pouce" parent="." instance=ExtResource("2_45s8h")]
 
 [connection signal="timeout" from="mobTimer" to="." method="_on_mob_timer_timeout"]
 [connection signal="timeout" from="startTimer" to="." method="_on_start_timer_timeout"]

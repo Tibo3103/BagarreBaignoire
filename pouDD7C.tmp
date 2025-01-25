@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmjqmn5peipua"]
+
+[ext_resource type="Script" path="res://pouce-pouce.gd" id="1_osfyv"]
+[ext_resource type="Texture2D" uid="uid://dah1jiu0gltau" path="res://icon.svg" id="2_vyc3y"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nbppq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vyc3y")
+}],
+"loop": true,
+"name": &"pouce-pouce",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bfqg8"]
+size = Vector2(129, 124)
+
+[node name="pouce-pouce" type="RigidBody2D"]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_osfyv")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_nbppq")
+animation = &"pouce-pouce"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_bfqg8")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dah1jiu0gltau" path="res://icon.svg" id="1_35kjq"]
 [ext_resource type="Script" path="res://joueur.gd" id="1_fgcnj"]
-[ext_resource type="Texture2D" uid="uid://cgb6apd0tgk3v" path="res://images/Savon1test.png" id="2_wdrtk"]
+[ext_resource type="Texture2D" uid="uid://c7yqsr8qc6ydp" path="res://images/Savon1test.png" id="2_wdrtk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jxko1"]
 animations = [{
