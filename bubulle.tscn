@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://ueay085cicij"]
+
+[ext_resource type="Script" path="res://bubulle.gd" id="1_d73ut"]
+[ext_resource type="Texture2D" uid="uid://rju1acxw08vn" path="res://images/Bulle3.png" id="1_pt4hq"]
+[ext_resource type="Texture2D" uid="uid://d4mudfx6825ni" path="res://images/Bulle2.png" id="2_g4adm"]
+[ext_resource type="Texture2D" uid="uid://dtn2tsq5pbquc" path="res://images/Bulle1.png" id="3_inmid"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s6cjq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pt4hq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_g4adm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_inmid")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_g4adm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tqcxb"]
+radius = 9.0
+
+[node name="Bubulle" type="RigidBody2D"]
+script = ExtResource("1_d73ut")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(6, -4)
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_s6cjq")
+frame_progress = 0.305326
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, -4)
+shape = SubResource("CircleShape2D_tqcxb")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(6, -4)
+scale = Vector2(0.3, 0.3)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -45,5 +45,6 @@ func _on_mob_timer_timeout():
 	
 	# Ajouter le mob à la scène
 	add_child(mob)
+
 	
 	

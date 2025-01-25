@@ -1,4 +1,5 @@
 extends RigidBody2D
+@export var bubulle_scene: PackedScene
 
 @export var speed: float = 100.0  # Vitesse de déplacement de l'ennemi
 
@@ -15,3 +16,12 @@ func _physics_process(delta):
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	# Supprime l'ennemi s'il quitte l'écran
 	queue_free()
+func _on_bubulle_timer_timeout():
+	if bubulle_scene==null:
+		push_error("bubulle_scene is not assigned")
+		return 
+	var bubulle = bubulle_scene.instantiate()
+	bubulle.position=position
+	add_child(bubulle)
+		 
+		

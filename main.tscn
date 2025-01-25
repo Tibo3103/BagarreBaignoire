@@ -17,7 +17,7 @@ mob_scene = ExtResource("2_45s8h")
 [node name="Player" parent="." instance=ExtResource("1_iw1cx")]
 
 [node name="mobTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 3.0
 
 [node name="startTimer" type="Timer" parent="."]
 wait_time = 2.0

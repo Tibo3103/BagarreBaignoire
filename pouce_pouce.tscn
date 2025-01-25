@@ -1,13 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmjqmn5peipua"]
+[gd_scene load_steps=6 format=3 uid="uid://bmjqmn5peipua"]
 
 [ext_resource type="Script" path="res://pouce-pouce.gd" id="1_osfyv"]
-[ext_resource type="Texture2D" uid="uid://dah1jiu0gltau" path="res://icon.svg" id="2_vyc3y"]
+[ext_resource type="Texture2D" uid="uid://gd58o62hldin" path="res://images/pousspoussver1.png" id="2_cjs33"]
+[ext_resource type="PackedScene" uid="uid://ueay085cicij" path="res://bubulle.tscn" id="3_4r67e"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nbppq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_vyc3y")
+"texture": ExtResource("2_cjs33")
 }],
 "loop": true,
 "name": &"pouce-pouce",
@@ -15,9 +16,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bfqg8"]
-size = Vector2(129, 124)
+size = Vector2(149.25, 176)
 
 [node name="pouce-pouce" type="RigidBody2D"]
+position = Vector2(1518, 636)
 collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource("1_osfyv")
@@ -25,13 +27,22 @@ metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+position = Vector2(-373, -173.5)
+scale = Vector2(4.6, 6.3)
 sprite_frames = SubResource("SpriteFrames_nbppq")
 animation = &"pouce-pouce"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -1)
+position = Vector2(-373, -169)
 shape = SubResource("RectangleShape2D_bfqg8")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-373.5, -168)
+scale = Vector2(7.35, 9)
+
+[node name="TimerBubulle" type="Timer" parent="."]
+
+[node name="Bubulle" parent="." instance=ExtResource("3_4r67e")]
+position = Vector2(-372, -174)
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
