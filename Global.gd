@@ -1,7 +1,7 @@
 extends Node
 @export var mob_scene: PackedScene
 var score
-
+var vie =3
 func _ready():
 	# Vérification si la scène du mob est assignée
 	if mob_scene == null:

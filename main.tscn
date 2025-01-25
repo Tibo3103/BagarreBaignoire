@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cq1se6ncmmfg1"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_bkx4a"]
+[ext_resource type="Script" path="res://Global.gd" id="1_bkx4a"]
 [ext_resource type="PackedScene" uid="uid://cbamkm1t8sl01" path="res://player.tscn" id="1_iw1cx"]
 [ext_resource type="PackedScene" uid="uid://bmjqmn5peipua" path="res://pouce_pouce.tscn" id="2_45s8h"]
 [ext_resource type="PackedScene" uid="uid://ig6g412tve4g" path="res://hud.tscn" id="4_7kfrq"]
@@ -38,7 +38,6 @@ one_shot = true
 [node name="HUD" parent="." instance=ExtResource("4_7kfrq")]
 
 [node name="mobTimer" type="Timer" parent="."]
-wait_time = 3.0
 
 [node name="ScoreTimer" type="Timer" parent="."]
 
