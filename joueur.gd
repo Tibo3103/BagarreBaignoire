@@ -5,15 +5,16 @@ var count=0
 var screen_size 
 var is_ready : bool = true
 var touchable = true
+var dashing = false
 
-func _ready():
-	screen_size = get_viewport_rect().size
+
 	
 func _process(delta):
 	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("move_right"):
 		if Input.is_action_pressed("dash") and is_ready:
 			is_ready = false 
+			dashing = true
 			$DashCooldown.start()
 			speed = 1000
 			$Dash.start()
@@ -23,6 +24,7 @@ func _process(delta):
 	if Input.is_action_pressed("move_left"):
 		if Input.is_action_pressed("dash") and is_ready:
 			is_ready = false 
+			dashing = true
 			$DashCooldown.start()
 			speed = 1000
 			$Dash.start()
@@ -32,6 +34,7 @@ func _process(delta):
 	if Input.is_action_pressed("move_backward"):
 		if Input.is_action_pressed("dash") and is_ready:
 			is_ready = false 
+			dashing = true
 			$DashCooldown.start()
 			speed = 1000
 			$Dash.start()
@@ -41,6 +44,7 @@ func _process(delta):
 	if Input.is_action_pressed("move_forward"):
 		if Input.is_action_pressed("dash") and is_ready:
 			is_ready = false 
+			dashing = true
 			$DashCooldown.start()
 			speed = 1000
 			$Dash.start()
@@ -56,9 +60,9 @@ func _process(delta):
 		
 	else:
 		$AnimatedSprite2D.stop()
-		
+	
 	position += velocity * delta
-	position = position.clamp(Vector2.ZERO, screen_size)
+	
 
 	
 
@@ -68,9 +72,10 @@ func start(pos):
 	$CollisionShape2D.disabled=false
 
 
-func _on_body_shape_entered(_body_rid: RID, _body: Node2D, _body_shape_index: int, _local_shape_index: int) -> void:
-	if touchable:
+func _on_body_shape_entered(_body_rid: RID, body: Node2D, _body_shape_index: int, _local_shape_index: int) -> void:
+	if touchable and not dashing:
 		#hide()
+		
 		print("ça marche")
 		hit.emit()
 		count=count+1
@@ -81,6 +86,9 @@ func _on_body_shape_entered(_body_rid: RID, _body: Node2D, _body_shape_index: in
 		if count==3:
 			get_parent().game_over()
 			count=0
+			
+	elif  dashing:
+		body.queue_free()
 	
 
 
@@ -90,6 +98,7 @@ func _on_dash_cooldown_timeout():
 
 func _on_dash_timeout():
 	speed = 400
+	dashing = false
 
 
 func _on_cooldown_collision_timeout():
