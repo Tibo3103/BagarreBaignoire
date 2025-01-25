@@ -10,26 +10,26 @@ func _ready():
 func _process(delta):
 	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("move_right"):
-		if Input.is_action_pressed("dash"):
-			velocity.x += 20
+		if Input.is_action_pressed("dash"): 
+			position.x += 50
 			print("dash droite")
 		velocity.x += 1
 		$AnimatedSprite2D.animation="droite"
 	if Input.is_action_pressed("move_left"):
 		if Input.is_action_pressed("dash"):
-			velocity.x -= 20
+			velocity.x -= 2
 			print("dash gauche")
 		velocity.x -= 1
 		$AnimatedSprite2D.animation="gauche"
 	if Input.is_action_pressed("move_backward"):
 		if Input.is_action_pressed("dash"):
-			velocity.y += 20
+			velocity.y += 2
 			print("dash bas")
 		velocity.y += 1
 		$AnimatedSprite2D.animation="bas"
 	if Input.is_action_pressed("move_forward"):
 		if Input.is_action_pressed("dash"):
-			velocity.y -= 1
+			velocity.y -= 2
 			print("dash haut")
 		velocity.y -= 1
 		$AnimatedSprite2D.animation="haut"
@@ -37,7 +37,7 @@ func _process(delta):
 	
 	
 	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed;
+		velocity = velocity * speed;
 		$AnimatedSprite2D.play()
 		
 	else:

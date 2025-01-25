@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cq1se6ncmmfg1"]
+[gd_scene load_steps=7 format=3 uid="uid://cq1se6ncmmfg1"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_bkx4a"]
 [ext_resource type="PackedScene" uid="uid://cbamkm1t8sl01" path="res://player.tscn" id="1_iw1cx"]
 [ext_resource type="PackedScene" uid="uid://bmjqmn5peipua" path="res://pouce_pouce.tscn" id="2_45s8h"]
+[ext_resource type="PackedScene" path="res://hud.tscn" id="4_7kfrq"]
+[ext_resource type="AudioStream" uid="uid://dm2w277nh22j7" path="res://Sounds/KeunotorSound.ogg" id="5_81fqt"]
 
 [sub_resource type="Curve2D" id="Curve2D_s7nfh"]
 _data = {
@@ -13,6 +15,14 @@ point_count = 6
 [node name="main" type="Node"]
 script = ExtResource("1_bkx4a")
 mob_scene = ExtResource("2_45s8h")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.67451, 1, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_iw1cx")]
 position = Vector2(245, 457)
@@ -35,5 +45,11 @@ rotation = 0.00132275
 
 [node name="pouce-pouce" parent="." instance=ExtResource("2_45s8h")]
 
+[node name="HUD" parent="." instance=ExtResource("4_7kfrq")]
+
+[node name="GameOverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_81fqt")
+
 [connection signal="timeout" from="mobTimer" to="." method="_on_mob_timer_timeout"]
 [connection signal="timeout" from="startTimer" to="." method="_on_start_timer_timeout"]
+[connection signal="start_game" from="HUD" to="." method="new_game"]
