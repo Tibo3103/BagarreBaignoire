@@ -13,9 +13,11 @@ func _physics_process(delta):
 	else:
 		push_warning("Le nœud 'Player' est introuvable.")
 
+
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	# Supprime l'ennemi s'il quitte l'écran
 	queue_free()
+	
 func _on_bubulle_timer_timeout():
 	if bubulle_scene==null:
 		push_error("bubulle_scene is not assigned")

@@ -12,10 +12,6 @@ func _ready():
 	new_game()
 
 
-func new_game():
-	$startTimer.start()
-
-
 func _on_start_timer_timeout():
 	$mobTimer.start()
 
@@ -46,5 +42,15 @@ func _on_mob_timer_timeout():
 	# Ajouter le mob à la scène
 	add_child(mob)
 
+
 	
+	
+
+
+func game_over() -> void:
+	$mobTimer.stop();
+	
+func new_game():
+	$mobTimer.start()
+	$Player.start($startPosition.position)
 	

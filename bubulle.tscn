@@ -29,6 +29,9 @@ animations = [{
 radius = 9.0
 
 [node name="Bubulle" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 5
+can_sleep = false
 script = ExtResource("1_d73ut")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

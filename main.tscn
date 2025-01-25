@@ -25,7 +25,7 @@ wait_time = 2.0
 one_shot = true
 
 [node name="startPosition" type="Marker2D" parent="."]
-position = Vector2(240, 450)
+position = Vector2(800, 400)
 
 [node name="mobPath" type="Path2D" parent="."]
 curve = SubResource("Curve2D_s7nfh")
@@ -35,5 +35,6 @@ rotation = 0.00132275
 
 [node name="pouce-pouce" parent="." instance=ExtResource("2_45s8h")]
 
+[connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="timeout" from="mobTimer" to="." method="_on_mob_timer_timeout"]
 [connection signal="timeout" from="startTimer" to="." method="_on_start_timer_timeout"]

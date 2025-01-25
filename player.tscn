@@ -86,10 +86,11 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qn2oc"]
-size = Vector2(83.0115, 67.9486)
+size = Vector2(82.1643, 48.923)
 
 [node name="joueur" type="Area2D"]
-position = Vector2(511, 273)
+position = Vector2(500, 500)
+collision_mask = 7
 script = ExtResource("1_fgcnj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -99,7 +100,11 @@ sprite_frames = SubResource("SpriteFrames_jxko1")
 animation = &"haut"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -2)
+visibility_layer = 7
+position = Vector2(0.499939, -14)
 rotation = -3.14159
 scale = Vector2(1.18056, 1.4717)
 shape = SubResource("RectangleShape2D_qn2oc")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
