@@ -85,7 +85,7 @@ position = Vector2(1.05115, -2.26136)
 scale = Vector2(-2.8889, 3.03444)
 sprite_frames = SubResource("SpriteFrames_jxko1")
 animation = &"gauche"
-frame_progress = 0.194105
+frame_progress = 0.0322032
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -2)
