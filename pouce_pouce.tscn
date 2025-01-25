@@ -16,10 +16,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bfqg8"]
-size = Vector2(114, 139)
+size = Vector2(96, 104)
 
 [node name="pouce-pouce" type="RigidBody2D"]
-position = Vector2(1518, 636)
+position = Vector2(1273, 625)
 collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource("1_osfyv")
@@ -27,22 +27,22 @@ metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-373, -173.5)
-scale = Vector2(3.57166, 4.62442)
+position = Vector2(-8.49993, 21)
+scale = Vector2(3.23333, 3.46667)
 sprite_frames = SubResource("SpriteFrames_nbppq")
 animation = &"pouce-pouce"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-371, -164.5)
+position = Vector2(-10, 28)
 shape = SubResource("RectangleShape2D_bfqg8")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(-373.5, -168)
-scale = Vector2(6.02466, 7.51422)
+position = Vector2(-8.99996, 28)
+scale = Vector2(5.25, 5.45)
 
 [node name="TimerBubulle" type="Timer" parent="."]
 
 [node name="Bubulle" parent="." instance=ExtResource("3_4r67e")]
-position = Vector2(-372, -174)
+position = Vector2(11, -17)
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

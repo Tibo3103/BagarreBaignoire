@@ -32,20 +32,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_3tt0j")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_6ydee")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_6x3n1")
-}],
-"loop": true,
-"name": &"droite",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": ExtResource("8_h37fk")
 }, {
 "duration": 1.0,
@@ -53,6 +39,20 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("10_nmksr")
+}],
+"loop": true,
+"name": &"droite",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_3tt0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6ydee")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6x3n1")
 }],
 "loop": true,
 "name": &"gauche",
@@ -81,13 +81,14 @@ position = Vector2(511, 273)
 script = ExtResource("1_fgcnj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(6.00002, -0.999997)
-scale = Vector2(3.22397, 3.60653)
+position = Vector2(1.05115, -2.26136)
+scale = Vector2(-2.8889, 3.03444)
 sprite_frames = SubResource("SpriteFrames_jxko1")
-animation = &"haut"
+animation = &"gauche"
+frame_progress = 0.194105
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(5, 5)
+position = Vector2(1, -2)
 rotation = -3.14159
 scale = Vector2(1.18056, 1.4717)
 shape = SubResource("RectangleShape2D_qn2oc")
