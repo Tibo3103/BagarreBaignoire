@@ -53,8 +53,6 @@ curve = SubResource("Curve2D_s7nfh")
 [node name="mobSpawnLocation" type="PathFollow2D" parent="mobPath"]
 rotation = 0.00132275
 
-[node name="pouce-pouce" parent="." instance=ExtResource("2_45s8h")]
-
 [node name="HUD" parent="." instance=ExtResource("4_7kfrq")]
 
 [node name="GameOverSound" type="AudioStreamPlayer" parent="."]

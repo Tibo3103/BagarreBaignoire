@@ -1,5 +1,4 @@
 extends Node
-
 @export var mob_scene: PackedScene
 var score
 
@@ -42,8 +41,9 @@ func game_over():
 	$ScoreTimer.stop()
 	$mobTimer.stop();
 	$HUD.show_game_over()
-	
-
+	for child in get_children():  # Parcourt les enfants directs de "main"
+		if child.has_method("extinction") and child.is_pouce_pouce:
+			child.extinction()
 	
 func new_game():
 	$Music.play()

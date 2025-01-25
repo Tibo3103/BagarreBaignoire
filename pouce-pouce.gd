@@ -1,7 +1,7 @@
 extends RigidBody2D
 @export var bubulle_scene: PackedScene
 @export var speed: float = 100.0  # Vitesse de déplacement de l'ennemi
-
+@export var is_pouce_pouce = true
 func _ready():
 	# Vérifie si le TimerBubulle existe et démarre
 	if $TimerBubulle:
@@ -41,3 +41,5 @@ func _on_timer_bubulle_timeout():
 	var bubulle = bubulle_scene.instantiate()
 	bubulle.position = global_position  # Place la Bubulle à la position actuelle de l'ennemi
 	get_parent().add_child(bubulle)  # Ajoute la Bubulle à la scène parent
+func extinction():
+	queue_free()
