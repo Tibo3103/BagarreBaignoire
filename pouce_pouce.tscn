@@ -1,14 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://bmjqmn5peipua"]
+[gd_scene load_steps=8 format=3 uid="uid://bmjqmn5peipua"]
 
 [ext_resource type="Script" path="res://pouce-pouce.gd" id="1_osfyv"]
-[ext_resource type="Texture2D" uid="uid://gd58o62hldin" path="res://images/pousspoussver1.png" id="2_cjs33"]
+[ext_resource type="Texture2D" uid="uid://dsywdf2sfhhqj" path="res://images/pousspouss2.png" id="2_jngkc"]
 [ext_resource type="PackedScene" uid="uid://ueay085cicij" path="res://bubulle.tscn" id="3_4r67e"]
+[ext_resource type="Texture2D" uid="uid://berqemip11l6r" path="res://images/pousspouss1.png" id="3_d3iwk"]
+[ext_resource type="Texture2D" uid="uid://dlpjvdme4xk01" path="res://images/pousspouss3.png" id="4_knknj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nbppq"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_cjs33")
+"duration": 0.5,
+"texture": ExtResource("2_jngkc")
+}, {
+"duration": 0.5,
+"texture": ExtResource("3_d3iwk")
+}, {
+"duration": 0.5,
+"texture": ExtResource("2_jngkc")
+}, {
+"duration": 0.5,
+"texture": ExtResource("4_knknj")
 }],
 "loop": true,
 "name": &"pouce-pouce",

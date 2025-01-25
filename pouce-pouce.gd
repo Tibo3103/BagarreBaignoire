@@ -4,6 +4,7 @@ extends RigidBody2D
 @export var speed: float = 100.0  # Vitesse de déplacement de l'ennemi
 
 func _physics_process(delta):
+	$AnimatedSprite2D.play()
 	# Essayer de trouver le nœud du joueur
 	var player = get_parent().get_node_or_null("Player")
 	if player:
@@ -15,10 +16,12 @@ func _physics_process(delta):
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
+	$AnimatedSprite2D.play()
 	# Supprime l'ennemi s'il quitte l'écran
 	queue_free()
 	
 func _on_bubulle_timer_timeout():
+	$AnimatedSprite2D.play()
 	if bubulle_scene==null:
 		push_error("bubulle_scene is not assigned")
 		return 
