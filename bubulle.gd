@@ -1,27 +1,30 @@
 extends RigidBody2D
 
 @export var speed: float = 150
-var player
-var direction = Vector2.ZERO  # Initialisation par défaut
+var player: Node2D
+var direction = Vector2.ZERO
 
 func _ready():
 	$AnimatedSprite2D.play()
-	# Récupère le joueur (s'assure qu'il existe)
-	player = get_parent().get_parent().get_node_or_null("Player")
+	# Recherche le joueur dans la hiérarchie
+	player = get_parent().get_node_or_null("Player")
+	
 	if player:
-		# Calcule la direction vers le joueur
 		direction = (player.global_position - global_position).normalized()
 	else:
-		print("Le nœud 'Player' n'a pas été trouvé !")
+		#push_error("Le nœud 'Player' n'a pas été trouvé ! Le mouvement est désactivé.")
+		direction = Vector2.ZERO  # Désactive le mouvement si aucun joueur trouvé
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	$AnimatedSprite2D.play()
-	if direction != Vector2.ZERO:
-		# Applique une force à l'objet pour qu'il se déplace dans la direction
-		# "Linear Velocity" est recommandé pour RigidBody2D
+	if player != null:
+		# Recalcule la direction pour suivre le joueur dynamiquement
+		
 		linear_velocity = direction * speed
+	else:
+		# Si le joueur n'existe plus, désactive le mouvement
+		linear_velocity = Vector2.ZERO
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	$AnimatedSprite2D.play()
-	# Supprime l'objet lorsque celui-ci quitte l'écran
-	queue_free()
+	queue_free()  # Supprime l'entité lorsqu'elle sort de l'écran

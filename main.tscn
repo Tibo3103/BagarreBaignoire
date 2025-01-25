@@ -35,6 +35,5 @@ rotation = 0.00132275
 
 [node name="pouce-pouce" parent="." instance=ExtResource("2_45s8h")]
 
-[connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="timeout" from="mobTimer" to="." method="_on_mob_timer_timeout"]
 [connection signal="timeout" from="startTimer" to="." method="_on_start_timer_timeout"]
