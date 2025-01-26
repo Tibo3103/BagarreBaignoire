@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://cbamkm1t8sl01"]
+[gd_scene load_steps=22 format=3 uid="uid://cbamkm1t8sl01"]
 
 [ext_resource type="Script" path="res://joueur.gd" id="1_fgcnj"]
 [ext_resource type="Texture2D" uid="uid://bf5vt11h78g11" path="res://images/sergent_savon_bas_1.png" id="2_mp88c"]
 [ext_resource type="Texture2D" uid="uid://c68yhn1n3c621" path="res://images/sergent_savon_bas_2.png" id="3_bkdmh"]
 [ext_resource type="Texture2D" uid="uid://vg5nc7wyrv31" path="res://images/sergent_savon_bas_3.png" id="4_pkwoi"]
 [ext_resource type="Texture2D" uid="uid://dp316b8lf4c34" path="res://images/sergent_savon_droite_1.png" id="5_3tt0j"]
+[ext_resource type="Texture2D" uid="uid://c8kev6lp1gafp" path="res://images/sergent_savon_dégat.png" id="5_mp0kv"]
 [ext_resource type="Texture2D" uid="uid://bul801y1f3r77" path="res://images/sergent_savon_droite_2.png" id="6_6ydee"]
 [ext_resource type="Texture2D" uid="uid://cxq7d532d16gn" path="res://images/sergent_savon_droite_3.png" id="7_6x3n1"]
 [ext_resource type="Texture2D" uid="uid://buy24xg72g7lf" path="res://images/sergent_savon_gauche_1.png" id="8_h37fk"]
@@ -13,6 +14,11 @@
 [ext_resource type="Texture2D" uid="uid://4uhxgbfx6r2t" path="res://images/sergent_savon_haut_1.png" id="11_fd2ud"]
 [ext_resource type="Texture2D" uid="uid://drt6qgb64nbrr" path="res://images/sergent_savon_haut_2.png" id="12_tig3n"]
 [ext_resource type="Texture2D" uid="uid://b4pl110eupa24" path="res://images/sergent_savon_haut_3.png" id="13_b6r3t"]
+[ext_resource type="Texture2D" uid="uid://g40psg28beh1" path="res://images/sergent_savon_dash_bas.png" id="14_4t3mj"]
+[ext_resource type="Texture2D" uid="uid://cfvxd7c27vkcq" path="res://images/sergent_savon_mort.png" id="15_b8mh4"]
+[ext_resource type="Texture2D" uid="uid://dnrga5ur5ye0x" path="res://images/sergent_savon_dash_droite.png" id="15_myjld"]
+[ext_resource type="Texture2D" uid="uid://c3kg147fte3hk" path="res://images/sergent_savon_dash_gauche.png" id="16_w8ajk"]
+[ext_resource type="Texture2D" uid="uid://b441dd7vn2ax1" path="res://images/sergent_savon_dash_haut.png" id="17_ur38v"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jxko1"]
 animations = [{
@@ -31,6 +37,26 @@ animations = [{
 }],
 "loop": true,
 "name": &"bas",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_mp0kv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mp0kv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mp0kv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mp0kv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mp0kv")
+}],
+"loop": true,
+"name": &"blessure",
 "speed": 5.0
 }, {
 "frames": [{
@@ -83,6 +109,106 @@ animations = [{
 "loop": true,
 "name": &"haut",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_b8mh4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_b8mh4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_b8mh4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_b8mh4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_b8mh4")
+}],
+"loop": true,
+"name": &"mort",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_4t3mj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_4t3mj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_4t3mj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_4t3mj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_4t3mj")
+}],
+"loop": true,
+"name": &"slide_bas",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_myjld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_myjld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_myjld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_myjld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_myjld")
+}],
+"loop": true,
+"name": &"slide_droite",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_w8ajk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_w8ajk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_w8ajk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_w8ajk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_w8ajk")
+}],
+"loop": true,
+"name": &"slide_gauche",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_ur38v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ur38v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ur38v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ur38v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ur38v")
+}],
+"loop": true,
+"name": &"slide_haut",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qn2oc"]
@@ -97,7 +223,7 @@ script = ExtResource("1_fgcnj")
 position = Vector2(1.05115, -2.26136)
 scale = Vector2(-2.8889, 3.03444)
 sprite_frames = SubResource("SpriteFrames_jxko1")
-animation = &"bas"
+animation = &"slide_droite"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
